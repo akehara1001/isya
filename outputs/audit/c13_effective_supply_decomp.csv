@@ -1,0 +1,49 @@
+﻿numerator,denominator,scheme,quantity,point,ci_lo,ci_hi,excludes_0
+head count x,raw,x-first,A (x-first),0.007773,0.002245,0.013239,True
+head count x,raw,x-first,B (x-first),-0.011452,-0.017193,-0.005951,True
+head count x,raw,P-first,A (P-first),0.004103,-0.001528,0.009559,False
+head count x,raw,P-first,B (P-first),-0.015122,-0.020837,-0.0098,True
+head count x,raw,Shapley,A (Shapley),0.005938,0.000404,0.011391,True
+head count x,raw,Shapley,B (Shapley),-0.013287,-0.018962,-0.007917,True
+head count x,raw,—,G(2016),0.197398,,,False
+head count x,raw,—,G(2024),0.190049,,,False
+head count x,raw,—,total dG,-0.007349,-0.013557,-0.000976,True
+head count x,raw,—,interaction,-0.00367,-0.004943,-0.002504,True
+head count x,raw,—,B-A (x-first),-0.019225,-0.028487,-0.010219,True
+head count x,raw,—,B-A (Shapley),-0.019225,-0.028487,-0.010219,True
+head count x,need,x-first,A (x-first),0.011342,0.005854,0.016697,True
+head count x,need,x-first,B (x-first),-0.016192,-0.020488,-0.011828,True
+head count x,need,P-first,A (P-first),0.008649,0.0031,0.014097,True
+head count x,need,P-first,B (P-first),-0.018884,-0.02301,-0.014717,True
+head count x,need,Shapley,A (Shapley),0.009996,0.004506,0.015399,True
+head count x,need,Shapley,B (Shapley),-0.017538,-0.021726,-0.013308,True
+head count x,need,—,G(2016),0.215842,,,False
+head count x,need,—,G(2024),0.208299,,,False
+head count x,need,—,total dG,-0.007542,-0.012899,-0.00197,True
+head count x,need,—,interaction,-0.002693,-0.003795,-0.001706,True
+head count x,need,—,B-A (x-first),-0.027534,-0.035545,-0.019406,True
+head count x,need,—,B-A (Shapley),-0.027534,-0.035545,-0.019406,True
+effective supply (theta=0.2),raw,x-first,A (x-first),0.003272,-0.002172,0.008709,False
+effective supply (theta=0.2),raw,x-first,B (x-first),-0.010985,-0.016707,-0.005492,True
+effective supply (theta=0.2),raw,P-first,A (P-first),-0.000265,-0.005829,0.005178,False
+effective supply (theta=0.2),raw,P-first,B (P-first),-0.014522,-0.020196,-0.009174,True
+effective supply (theta=0.2),raw,Shapley,A (Shapley),0.001504,-0.003934,0.006884,False
+effective supply (theta=0.2),raw,Shapley,B (Shapley),-0.012753,-0.018439,-0.007377,True
+effective supply (theta=0.2),raw,—,G(2016),0.193041,,,False
+effective supply (theta=0.2),raw,—,G(2024),0.181791,,,False
+effective supply (theta=0.2),raw,—,total dG,-0.01125,-0.017563,-0.004713,True
+effective supply (theta=0.2),raw,—,interaction,-0.003537,-0.004765,-0.002404,True
+effective supply (theta=0.2),raw,—,B-A (x-first),-0.014257,-0.023358,-0.005457,True
+effective supply (theta=0.2),raw,—,B-A (Shapley),-0.014257,-0.023358,-0.005457,True
+effective supply (theta=0.2),need,x-first,A (x-first),0.006914,0.001501,0.012272,True
+effective supply (theta=0.2),need,x-first,B (x-first),-0.015906,-0.02021,-0.011528,True
+effective supply (theta=0.2),need,P-first,A (P-first),0.00413,-0.001334,0.009584,False
+effective supply (theta=0.2),need,P-first,B (P-first),-0.01869,-0.022862,-0.014505,True
+effective supply (theta=0.2),need,Shapley,A (Shapley),0.005522,0.000118,0.01092,True
+effective supply (theta=0.2),need,Shapley,B (Shapley),-0.017298,-0.021499,-0.013051,True
+effective supply (theta=0.2),need,—,G(2016),0.211027,,,False
+effective supply (theta=0.2),need,—,G(2024),0.199252,,,False
+effective supply (theta=0.2),need,—,total dG,-0.011775,-0.017169,-0.006073,True
+effective supply (theta=0.2),need,—,interaction,-0.002784,-0.003878,-0.001786,True
+effective supply (theta=0.2),need,—,B-A (x-first),-0.02282,-0.03076,-0.01486,True
+effective supply (theta=0.2),need,—,B-A (Shapley),-0.02282,-0.03076,-0.01486,True

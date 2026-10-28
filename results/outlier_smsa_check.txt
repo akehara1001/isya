@@ -1,0 +1,7 @@
+﻿SMSA outlier check: effective_density_theta05 < 100 in 2024
+outlier_count: 0
+population_median: 212139.300
+population_p01: 22618.134
+population_p99: 2278554.398
+
+No SMSAs below threshold.

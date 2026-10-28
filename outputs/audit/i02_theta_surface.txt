@@ -1,0 +1,17 @@
+theta grid 0.0..1.0 step 0.1;  flow years [2016, 2018, 2020, 2022, 2024]
+
+ year  theta  primary (census)  effective (census)  primary (share)  effective (share)
+ 2016    0.5            0.1974              0.1870           0.0951             0.0975
+ 2018    0.5            0.1962              0.1759           0.0933             0.0983
+ 2020    0.5            0.1945              0.1740           0.0920             0.0960
+ 2022    0.5            0.1912              0.1695           0.0888             0.0935
+ 2024    0.5            0.1900              0.1705           0.0832             0.0879
+
+census denominator: theta-year cells where effective Gini is NOT below primary: 0 of 50  -> no crossover
+physician-share denominator: cells where the direction is not 'widen': 0
+truncation ever binding: False; minimum of (x + theta n) over all cells: 24.0
+
+Table S4 check (theta = 0.5):
+ year  share primary  share effective  census primary  census effective
+ 2016          0.095            0.098           0.197             0.187
+ 2024          0.083            0.088           0.190             0.171

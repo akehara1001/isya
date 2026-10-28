@@ -1,0 +1,15 @@
+﻿Gravity v2 VIF comparison
+
+term	G2a_NegBin_dest_stock_population	G2b_NegBin_dest_density_only	G2c_NegBin_dest_stock_only
+adj	1.560	1.527	1.545
+log_density_j		1.222	
+log_dist	1.528	1.417	1.439
+log_hosp_j	5.698	1.225	4.684
+log_pop_j	11.385		
+log_x_i	1.108	1.104	1.096
+log_x_j	9.881		4.765
+same_pref	1.549	1.521	1.536
+year_2018	1.748	1.748	1.748
+year_2020	1.761	1.761	1.759
+year_2022	1.800	1.800	1.795
+year_2024	1.820	1.820	1.811

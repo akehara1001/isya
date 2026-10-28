@@ -1,0 +1,18 @@
+====================================================================================================
+Destination-density coefficient, PPML throughout, adjacency included:
+sample (rows) x distance form
+====================================================================================================
+
+          sample  distance form       rows     k             beta log_density_j
+       all dyads       log(1+d)    542,850    11         -0.031 [-0.257,+0.196]
+       all dyads        13 bins    542,850    22         +0.156 [-0.013,+0.324]
+  positive flows       log(1+d)     26,533    11         +0.102 [-0.087,+0.292]
+  positive flows        13 bins     26,533    22         +0.177 [-0.006,+0.360]
+
+Effect of including the zeros, holding the distance form fixed:
+    under   log(1+d): +0.102 on positive flows vs -0.031 on all dyads, a move of 0.133
+    under    13 bins: +0.177 on positive flows vs +0.156 on all dyads, a move of 0.021
+
+Control: the all-dyads column is already persisted by s06. Both cells must match.
+      log(1+d): here -0.0306   s06 -0.0306   ok
+       13 bins: here +0.1559   s06 +0.1559   ok

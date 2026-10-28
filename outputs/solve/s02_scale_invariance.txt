@@ -1,0 +1,101 @@
+====================================================================================================
+SOLVE 2 -- the same analysis at three nested scales
+====================================================================================================
+municipality basis: 1892 in the 2024 MHLW vintage, 1876 also present in the 2010 and 2020 censuses -> analysis basis
+
+municipality-scale coverage (physicians on the fixed basis, of the national total):
+ year   phys on basis   national   coverage  zero-physician municipalities
+ 2006         264,375    277,927     95.12%                             48
+ 2008         275,346    286,699     96.04%                             38
+ 2010         289,150    295,049     98.00%                             23
+ 2012         297,379    303,268     98.06%                             28
+ 2014         305,094    311,205     98.04%                             28
+ 2016         313,208    319,480     98.04%                             28
+ 2018         320,830    327,210     98.05%                             27
+ 2020         332,979    339,623     98.04%                             29
+ 2022         336,530    343,275     98.04%                             29
+ 2024         341,313    347,772     98.14%                             33
+
+====================================================================================================
+GINI AND ITS CHANGE, 2010->2024, AT THREE SCALES
+====================================================================================================
+        scale   units  measure   G 2010   G 2024        dG                 95% CI
+   prefecture      47    count   0.4483   0.4692   +0.0209 [ +0.0116, +0.0294]
+   prefecture      47      raw   0.0932   0.0801   -0.0130 [ -0.0181, -0.0073]
+   prefecture      47     need   0.0904   0.0801   -0.0102 [ -0.0151, -0.0044]
+
+       circle     330    count   0.5949   0.6117   +0.0167 [ +0.0121, +0.0213]
+       circle     330      raw   0.1985   0.1900   -0.0084 [ -0.0174, +0.0001]
+       circle     330     need   0.2151   0.2083   -0.0068 [ -0.0133, +0.0002]
+
+ municipality    1876    count   0.7390   0.7519   +0.0129 [ +0.0100, +0.0160]
+ municipality    1876      raw   0.4132   0.4280   +0.0148 [ +0.0051, +0.0246]
+ municipality    1876     need   0.4346   0.4526   +0.0180 [ +0.0091, +0.0273]
+
+====================================================================================================
+DECOMPOSITION 2010->2024 AT THREE SCALES (Gini units, all three schemes)
+====================================================================================================
+
+--- prefecture (47 units), raw denominator ---   total dG = -0.0130
+     A x-first   -0.0103 [  -0.0213,  +0.0010]    
+     A P-first   -0.0177 [  -0.0274,  -0.0074] SIG
+     A Shapley   -0.0140 [  -0.0241,  -0.0035] SIG
+     B x-first   -0.0028 [  -0.0145,  +0.0083]    
+     B P-first   +0.0047 [  -0.0058,  +0.0144]    
+     B Shapley   +0.0010 [  -0.0100,  +0.0111]    
+         B - A   +0.0150 [  -0.0056,  +0.0347]    
+
+--- prefecture (47 units), need denominator ---   total dG = -0.0102
+     A x-first   -0.0032 [  -0.0144,  +0.0079]    
+     A P-first   -0.0115 [  -0.0222,  -0.0003] SIG
+     A Shapley   -0.0074 [  -0.0182,  +0.0035]    
+     B x-first   -0.0070 [  -0.0174,  +0.0043]    
+     B P-first   +0.0012 [  -0.0094,  +0.0119]    
+     B Shapley   -0.0029 [  -0.0131,  +0.0079]    
+         B - A   +0.0045 [  -0.0163,  +0.0253]    
+
+--- circle (330 units), raw denominator ---   total dG = -0.0084
+     A x-first   +0.0220 [  +0.0143,  +0.0295] SIG
+     A P-first   +0.0091 [  +0.0012,  +0.0168] SIG
+     A Shapley   +0.0155 [  +0.0079,  +0.0230] SIG
+     B x-first   -0.0304 [  -0.0416,  -0.0206] SIG
+     B P-first   -0.0175 [  -0.0286,  -0.0074] SIG
+     B Shapley   -0.0239 [  -0.0351,  -0.0141] SIG
+         B - A   -0.0395 [  -0.0561,  -0.0236] SIG
+
+--- circle (330 units), need denominator ---   total dG = -0.0068
+     A x-first   +0.0292 [  +0.0219,  +0.0364] SIG
+     A P-first   +0.0192 [  +0.0115,  +0.0268] SIG
+     A Shapley   +0.0242 [  +0.0168,  +0.0314] SIG
+     B x-first   -0.0360 [  -0.0441,  -0.0283] SIG
+     B P-first   -0.0260 [  -0.0345,  -0.0179] SIG
+     B Shapley   -0.0310 [  -0.0392,  -0.0233] SIG
+         B - A   -0.0551 [  -0.0690,  -0.0413] SIG
+
+--- municipality (1876 units), raw denominator ---   total dG = +0.0148
+     A x-first   +0.0498 [  +0.0414,  +0.0588] SIG
+     A P-first   +0.0380 [  +0.0284,  +0.0475] SIG
+     A Shapley   +0.0439 [  +0.0356,  +0.0528] SIG
+     B x-first   -0.0350 [  -0.0412,  -0.0294] SIG
+     B P-first   -0.0232 [  -0.0310,  -0.0147] SIG
+     B Shapley   -0.0291 [  -0.0357,  -0.0228] SIG
+         B - A   -0.0730 [  -0.0848,  -0.0613] SIG
+
+--- municipality (1876 units), need denominator ---   total dG = +0.0180
+     A x-first   +0.0526 [  +0.0442,  +0.0617] SIG
+     A P-first   +0.0446 [  +0.0352,  +0.0543] SIG
+     A Shapley   +0.0486 [  +0.0403,  +0.0577] SIG
+     B x-first   -0.0346 [  -0.0390,  -0.0304] SIG
+     B P-first   -0.0266 [  -0.0327,  -0.0195] SIG
+     B Shapley   -0.0306 [  -0.0355,  -0.0256] SIG
+         B - A   -0.0792 [  -0.0901,  -0.0685] SIG
+
+====================================================================================================
+VERDICT: is component A positive at every scale?
+====================================================================================================
+   prefecture   raw: A positive under all 3 schemes = False; interval excludes zero in 2/3
+   prefecture  need: A positive under all 3 schemes = False; interval excludes zero in 1/3
+       circle   raw: A positive under all 3 schemes =  True; interval excludes zero in 3/3
+       circle  need: A positive under all 3 schemes =  True; interval excludes zero in 3/3
+ municipality   raw: A positive under all 3 schemes =  True; interval excludes zero in 3/3
+ municipality  need: A positive under all 3 schemes =  True; interval excludes zero in 3/3

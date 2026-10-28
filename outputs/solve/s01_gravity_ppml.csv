@@ -1,0 +1,22 @@
+﻿spec,term,coef,se,ci_lo,ci_hi,z,p,sig,n_obs
+"(a) PPML descriptive, year FE",log_dist,-1.3911,0.047,-1.4833,-1.299,-29.59,0.0,True,542850.0
+"(a) PPML descriptive, year FE",adj,0.2177,0.1105,0.0012,0.4343,1.97,0.04875914324878372,True,542850.0
+"(a) PPML descriptive, year FE",same_pref,1.1417,0.157,0.834,1.4494,7.27,3.5416114485542494e-13,True,542850.0
+"(a) PPML descriptive, year FE",log_x_i,0.8145,0.0336,0.7488,0.8803,24.27,0.0,True,542850.0
+"(a) PPML descriptive, year FE",log_density_j,-0.0306,0.1154,-0.2567,0.1956,-0.26,0.7911872343687731,False,542850.0
+"(a) PPML descriptive, year FE",log_infra_total_j,0.2902,0.0657,0.1614,0.419,4.42,1.003263702292756e-05,True,542850.0
+"(b) PPML structural, origin + destination + year FE",log_dist,-2.0354,0.0549,-2.143,-1.9279,-37.11,0.0,True,541205.0
+"(b) PPML structural, origin + destination + year FE",adj,-0.2779,0.0742,-0.4233,-0.1324,-3.74,0.00018055383848136763,True,541205.0
+"(b) PPML structural, origin + destination + year FE",same_pref,1.1102,0.1177,0.8796,1.3408,9.44,0.0,True,541205.0
+"(b) PPML structural, origin + destination + year FE",log_x_i,0.7624,0.1992,0.372,1.1528,3.83,0.00012943242527563292,True,541205.0
+"(b) PPML structural, origin + destination + year FE",log_density_j,0.0507,0.1273,-0.1988,0.3003,0.4,0.6903858221352948,False,541205.0
+"(b) PPML structural, origin + destination + year FE",log_infra_total_j,-0.312,0.1307,-0.5682,-0.0557,-2.39,0.01701513573953939,True,541205.0
+"(b2) PPML full structural, origin x year + destination x year FE",log_dist,-2.036,0.055,-2.1438,-1.9283,-37.04,0.0,True,530687.0
+"(b2) PPML full structural, origin x year + destination x year FE",adj,-0.2778,0.0741,-0.423,-0.1326,-3.75,0.00017692606310548697,True,530687.0
+"(b2) PPML full structural, origin x year + destination x year FE",same_pref,1.1101,0.1175,0.8799,1.3403,9.45,0.0,True,530687.0
+(c) NB-GLM positive flows (published),log_dist,-0.6342,0.0391,-0.7108,-0.5576,-16.23,3.2067525806220044e-59,True,
+(c) NB-GLM positive flows (published),adj,0.5263,0.0531,0.4221,0.6305,9.9,4.0811556275583766e-23,True,
+(c) NB-GLM positive flows (published),same_pref,0.9901,0.0575,0.8775,1.1027,17.23,1.4856929759152453e-66,True,
+(c) NB-GLM positive flows (published),log_x_i,0.5959,0.0238,0.5492,0.6425,25.05,1.7265063634072564e-138,True,
+(c) NB-GLM positive flows (published),log_density_j,0.1449,0.0851,-0.0219,0.3117,1.7,0.08867485315611542,False,
+(c) NB-GLM positive flows (published),log_infra_total_j,0.2264,0.0275,0.1725,0.2802,8.24,1.7243424097085634e-16,True,

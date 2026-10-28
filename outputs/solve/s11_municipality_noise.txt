@@ -1,0 +1,120 @@
+========================================================================================================
+WORK 2 -- municipality-scale noise check
+========================================================================================================
+basis: 1,876 municipalities (2024 MHLW vintage n 2010 and 2020 censuses)
+
+ year  zero-physician units   pop min   pop p25  pop median   pop p75     pop max  units <10k
+ 2006                    48       211     9,544      30,140    81,698     848,360         457
+ 2008                    38       206     9,304      29,758    82,189     862,749         460
+ 2010                    23       201     9,743      30,198    82,894     877,138         479
+ 2012                    28       192     9,456      29,677    82,460     887,621         494
+ 2014                    28       183     9,113      29,224    82,052     898,104         506
+ 2016                    28        98     8,836      28,815    81,343     911,410         515
+ 2018                    27       173     8,637      28,207    81,244     927,537         523
+ 2020                    29       169     8,311      27,910    80,609     943,664         530
+ 2022                    29       169     7,971      26,990    79,487     948,093         546
+ 2024                    33       168     7,672      26,032    78,262     952,522         559
+
+ten highest municipality densities, 2024 (the units a noise story would rest on):
+municipality  circle  physicians  population   per 100k
+       13101    1301       1,998      66,352      3,011   千代田区
+       18322    1801         402      18,171      2,212   永平寺町
+       03322    0301         558      27,196      2,052   矢巾町
+       13105    1301       4,914     247,854      1,983   文京区
+       38215    3804         582      32,986      1,764   東温市
+       19214    1901         533      30,332      1,757   中央市
+       12223    1207         499      29,614      1,685   鴨川市
+       28110    2801       2,522     151,063      1,670   中央区
+       09361    0905         637      38,323      1,662   壬生町
+       11326    1106         557      33,674      1,654   毛呂山町
+
+distinct municipality codes in the source, by wave: 2006:1,973, 2008:1,951, 2010:1,901, 2012:1,897, 2014:1,896, 2016:1,896, 2018:1,896, 2020:1,896, 2022:1,896, 2024:1,892
+codes present in 2010 but absent in 2024: 24; absent in 2012 but present in 2010: 12
+The fixed 2024 basis absorbs any merger inside the window by construction: a unit that
+disappears simply stops contributing, and coverage is reported per wave (98.0% from 2010).
+
+========================================================================================================
+TREATMENTS -- component A and the density-Gini change, 2010->2024
+========================================================================================================
+
+--- (a) all municipalities  (1,876 units, 10,000 resamples) ---
+     raw  dG = +0.0148 [+0.0051, +0.0246]
+          A (x) = +0.0498 [+0.0414, +0.0588]  SIG
+          A (P) = +0.0380 [+0.0284, +0.0475]  SIG
+          A (S) = +0.0439 [+0.0356, +0.0528]  SIG
+    need  dG = +0.0180 [+0.0091, +0.0273]
+          A (x) = +0.0526 [+0.0442, +0.0617]  SIG
+          A (P) = +0.0446 [+0.0352, +0.0543]  SIG
+          A (S) = +0.0486 [+0.0403, +0.0577]  SIG
+
+--- (b) population-weighted  (1,876 units, 2,000 resamples) ---
+     raw  dG = -0.0120 [-0.0193, -0.0043]
+          A (x) = +0.0105 [+0.0037, +0.0172]  SIG
+          A (P) = +0.0037 [-0.0029, +0.0104]  
+          A (S) = +0.0071 [+0.0003, +0.0137]  SIG
+    need  dG = -0.0043 [-0.0107, +0.0024]
+          A (x) = +0.0135 [+0.0067, +0.0201]  SIG
+          A (P) = +0.0086 [+0.0019, +0.0151]  SIG
+          A (S) = +0.0110 [+0.0043, +0.0176]  SIG
+
+--- (c) pop >= 1,000  (1,850 units, 2,000 resamples) ---
+     raw  dG = +0.0142 [+0.0054, +0.0237]
+          A (x) = +0.0494 [+0.0413, +0.0585]  SIG
+          A (P) = +0.0380 [+0.0287, +0.0473]  SIG
+          A (S) = +0.0437 [+0.0358, +0.0526]  SIG
+    need  dG = +0.0177 [+0.0096, +0.0269]
+          A (x) = +0.0524 [+0.0442, +0.0616]  SIG
+          A (P) = +0.0446 [+0.0357, +0.0541]  SIG
+          A (S) = +0.0485 [+0.0406, +0.0577]  SIG
+
+--- (c) pop >= 5,000  (1,638 units, 2,000 resamples) ---
+     raw  dG = +0.0127 [+0.0038, +0.0230]
+          A (x) = +0.0452 [+0.0371, +0.0549]  SIG
+          A (P) = +0.0336 [+0.0240, +0.0432]  SIG
+          A (S) = +0.0394 [+0.0309, +0.0487]  SIG
+    need  dG = +0.0173 [+0.0092, +0.0274]
+          A (x) = +0.0484 [+0.0402, +0.0584]  SIG
+          A (P) = +0.0400 [+0.0304, +0.0497]  SIG
+          A (S) = +0.0442 [+0.0359, +0.0537]  SIG
+
+--- (c) pop >= 10,000  (1,397 units, 2,000 resamples) ---
+     raw  dG = +0.0076 [-0.0025, +0.0191]
+          A (x) = +0.0381 [+0.0293, +0.0471]  SIG
+          A (P) = +0.0257 [+0.0157, +0.0356]  SIG
+          A (S) = +0.0319 [+0.0233, +0.0406]  SIG
+    need  dG = +0.0136 [+0.0044, +0.0244]
+          A (x) = +0.0419 [+0.0329, +0.0508]  SIG
+          A (P) = +0.0324 [+0.0225, +0.0422]  SIG
+          A (S) = +0.0371 [+0.0284, +0.0463]  SIG
+
+--- (d) composite units: municipalities under 10,000 residents merged within their circle ---
+    479 municipalities merged into 164 composites; 1,561 units in total
+     raw  dG = +0.0108 [+0.0010, +0.0212]
+          A (x) = +0.0437 [+0.0350, +0.0533]  SIG
+          A (P) = +0.0320 [+0.0223, +0.0421]  SIG
+          A (S) = +0.0379 [+0.0293, +0.0470]  SIG
+    need  dG = +0.0154 [+0.0065, +0.0253]
+          A (x) = +0.0468 [+0.0378, +0.0565]  SIG
+          A (P) = +0.0383 [+0.0288, +0.0482]  SIG
+          A (S) = +0.0426 [+0.0338, +0.0520]  SIG
+
+========================================================================================================
+DECISION CRITERION
+========================================================================================================
+                               treatment    units    A Shapley raw   A>0   sig   A Shapley need   A>0   sig
+                  (a) all municipalities    1,876          +0.0439  True   yes          +0.0486  True   yes
+                 (b) population-weighted    1,876          +0.0071  True   yes          +0.0110  True   yes
+                        (c) pop >= 1,000    1,850          +0.0437  True   yes          +0.0485  True   yes
+                        (c) pop >= 5,000    1,638          +0.0394  True   yes          +0.0442  True   yes
+                       (c) pop >= 10,000    1,397          +0.0319  True   yes          +0.0371  True   yes
+    (d) composites <10k merged in-circle    1,561          +0.0379  True   yes          +0.0426  True   yes
+
+component A positive under EVERY treatment, both denominators: True
+
+scale ordering, A Shapley raw:  prefecture -0.0142  <  circle +0.0152  <  municipality:
+                      (a) all municipalities   +0.0439  ordering holds
+                     (b) population-weighted   +0.0071  ordering BREAKS
+                            (c) pop >= 1,000   +0.0437  ordering holds
+                            (c) pop >= 5,000   +0.0394  ordering holds
+                           (c) pop >= 10,000   +0.0319  ordering holds
+        (d) composites <10k merged in-circle   +0.0379  ordering holds

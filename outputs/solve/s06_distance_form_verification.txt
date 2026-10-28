@@ -1,0 +1,60 @@
+====================================================================================================
+VERIFICATION 1 -- is log(1+d) formally rejected?
+====================================================================================================
+Wald test that the 12 distance-bin dummies are jointly zero, in a model that
+also contains log(1+d), with the two-way cluster-robust covariance:
+    W = 570.6 on 12 degrees of freedom,  p = 0
+
+Descriptive fit (Poisson deviance; a quasi-likelihood quantity under PPML, so it is
+reported for comparison and not used as a likelihood-ratio statistic):
+             model     k         deviance    deviance + 2k
+          log(1+d)    11          262,239          262,261
+           13 bins    22          207,750          207,794
+   log(1+d) + bins    23          207,747          207,793
+    deviance falls 54,489 for 11 extra parameters
+
+====================================================================================================
+VERIFICATION 2 -- which mechanism actually moved destination density?
+====================================================================================================
+
+(2a) Where does the log(1+d) model over- or under-predict, by distance band?
+     relative error = (sum observed - sum fitted) / sum fitted within the band.
+     positive => the model UNDER-predicts flow in that band.
+
+ bin  median km    observed      fitted   rel. error   fitted log-curve vs bin coef
+   0       18.0      65,482      87,336       -0.25   equal (-0.00)
+   1       24.4       8,565       5,287       +0.62   log curve BELOW bins (-0.56)
+   2       29.9      30,493      18,592       +0.64   log curve BELOW bins (-0.81)
+   3       34.4       2,694       1,599       +0.68   log curve BELOW bins (-0.83)
+   4       39.6      22,193      12,550       +0.77   log curve BELOW bins (-0.99)
+   5       45.3       3,162       2,021       +0.56   log curve BELOW bins (-0.92)
+   6       50.8      11,898       7,533       +0.58   log curve BELOW bins (-0.93)
+   7       61.4      12,509       7,943       +0.57   log curve BELOW bins (-0.97)
+   8       78.0       7,569       6,633       +0.14   log curve BELOW bins (-0.72)
+   9       99.3       6,038       6,179       -0.02   log curve BELOW bins (-0.56)
+  10      140.6       4,715       7,756       -0.39   log curve BELOW bins (-0.11)
+  11      242.2       4,197       9,768       -0.57   log curve ABOVE bins (+0.24)
+  12      696.0       3,101       9,419       -0.67   log curve ABOVE bins (+0.27)
+
+(2b) Four-cell table: destination density coefficient
+
+   distance term               with adjacency            without adjacency     shift
+        log(1+d)       -0.031 [-0.257,+0.196]       -0.016 [-0.243,+0.212]    +0.015
+         13 bins       +0.156 [-0.013,+0.324]       +0.213 [+0.054,+0.373]    +0.058
+
+(2c) adjacency coefficient in the same four cells, and the correlation structure
+    adjacency under   log(1+d): +0.218 [+0.001, +0.434]
+    adjacency under    13 bins: +0.748 [+0.591, +0.905]
+
+    corr(adj, log_density_j)          = +0.0009
+    corr(adj, log_dist)               = -0.3287
+    corr(log_dist, log_density_j)     = -0.0578
+    among pairs < 60 km: corr(adj, log_density_j) = -0.0454
+    mean destination density (per 100k): adjacent 233.8 vs non-adjacent 232.5
+
+====================================================================================================
+MECHANISM VERDICT
+====================================================================================================
+relative prediction error of the log model in the 20-50 km bands: +0.62, +0.64, +0.68, +0.77, +0.56
+  -> the log model UNDER-predicts flow at 20-50 km
+removing adjacency moves destination density by +0.015 under log(1+d) and +0.058 under bins

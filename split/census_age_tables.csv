@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# The census AGE table behind each wave of census_age/age_muni_YYYY.csv, and
+# whether that table imputes unknown age (不詳補完).
+#
+# WHY IT MATTERS. i05 reports, per census year, the gap between the total
+# population and the sum of the age table, under the column name
+# `unstated_age_persons`. That name is a claim, and for a table that imputes
+# unknown age it is a FALSE one: such a table has no unstated age by
+# construction, so the gap has to be something else.
+#
+# It was something else. On 2026-08-29 the 2020 row read 80,469 -- which is
+# 126,226,568 minus 126,146,099, the preliminary tabulation minus the confirmed
+# one. Total population came from the 速報集計 (statsDataId 0003433219, opened
+# 2021-06-25) and age composition from the 不詳補完結果 keyed to the confirmed
+# 人口等基本集計. The revision between two editions of the census was being
+# recorded as persons of unstated age, and every downstream reader of that
+# column would have read it that way.
+#
+# THE SOURCE OF EACH ROW is the e-Stat getMetaInfo STATISTICS_NAME for the id,
+# quoted verbatim in `statistics_name`, and the id itself is the one the fetch
+# script passes. Nothing here is inferred from the data.
+#
+# unknown_age_imputed:
+#   true   the table is a 不詳補完結果 (imputed-unknown result). The age
+#          classes are exhaustive and their sum IS the total population, so
+#          i05 asserts the gap is zero and fails if it is not.
+#   false  the table reports 年齢不詳 separately and the fetch keeps only the
+#          five-year classes, so a positive gap is expected and is unstated age.
+# ---------------------------------------------------------------------------
+census_year,statsdataid,statistics_name,unknown_age_imputed,fetch_script,why
+2005,0000033787,平成17年国勢調査 男女・年齢・配偶関係，世帯の構成，住居の状態など（第1次基本集計） 都道府県結果,false,cc_fetch_age_2005.py,"Single year of age, folded into the same nineteen five-year bands as the other waves. A first-basic-tabulation table of its own era; unknown age is a separate category and is dropped by the fold, so the gap is unstated age."
+2010,0003038591,平成22年国勢調査 人口等基本集計（男女・年齢・配偶関係，世帯の構成，住居の状態など）,false,cc_fetch_age.py,"Basic tabulation of its own era, before the imputed-unknown results existed. Unknown age is a separate category; the gap is unstated age."
+2015,0004019348,令和２年国勢調査 参考表：不詳補完結果 平成27年国勢調査に関する不詳補完結果（遡及集計）,true,cc_fetch_age.py,"A RETROSPECTIVE imputed-unknown tabulation of the 2015 census, published with the 2020 round. Exhaustive by construction, so the gap must be zero -- and it is measured at zero."
+2020,0004019309,令和２年国勢調査 参考表：不詳補完結果 令和２年国勢調査に関する不詳補完結果,true,cc_fetch_age.py,"Title: 年齢・国籍（日本人・外国人の別）・配偶関係の不詳補完（人口等基本集計に対応）. Keyed to the CONFIRMED 人口等基本集計, national sum 126,146,099. Exhaustive, so the gap must be zero. It is 80,469 today because the total-population side is the preliminary tabulation; round 2 replaces that side."

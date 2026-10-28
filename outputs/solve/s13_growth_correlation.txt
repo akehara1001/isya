@@ -1,0 +1,15 @@
+================================================================================================
+A-3 -- do the areas that gained physicians also gain people?
+================================================================================================
+areas 330   window 2010-2024   resamples 10000   seed 20260705
+national physician total 2010 295,049 -> 2024 347,772
+national population      2010 128,057,352 -> 2024 123,607,242
+
+change in log physician count: median +0.1119  areas rising 254 of 330
+change in log population     : median -0.1161  areas rising 49 of 330
+
+                                    quantity    window  n_areas    point    ci_lo    ci_hi  boot_median  n_boot excludes_0
+              Spearman rho, dlog x vs dlog P 2010-2024      330 0.701210 0.633801 0.759717     0.701069   10000       True
+Pearson r, dlog x vs dlog P (reference only) 2010-2024      330 0.701714      NaN      NaN          NaN       0           
+
+Spearman rho = +0.7012 [+0.6338, +0.7597]   excludes 0

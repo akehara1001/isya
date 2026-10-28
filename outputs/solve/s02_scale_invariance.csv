@@ -1,0 +1,52 @@
+﻿block,scale,units,measure,G_2010,G_2024,dG,ci_lo,ci_hi,excludes_zero,component,point
+Gini change 2010-2024,prefecture,47,count,0.4483,0.4692,0.0209,0.0116,0.0294,True,,
+Gini change 2010-2024,prefecture,47,raw,0.0932,0.0801,-0.013,-0.0181,-0.0073,True,,
+Gini change 2010-2024,prefecture,47,need,0.0904,0.0801,-0.0102,-0.0151,-0.0044,True,,
+Gini change 2010-2024,circle,330,count,0.5949,0.6117,0.0167,0.0121,0.0213,True,,
+Gini change 2010-2024,circle,330,raw,0.1985,0.19,-0.0084,-0.0174,0.0001,False,,
+Gini change 2010-2024,circle,330,need,0.2151,0.2083,-0.0068,-0.0133,0.0002,False,,
+Gini change 2010-2024,municipality,1876,count,0.739,0.7519,0.0129,0.01,0.016,True,,
+Gini change 2010-2024,municipality,1876,raw,0.4132,0.428,0.0148,0.0051,0.0246,True,,
+Gini change 2010-2024,municipality,1876,need,0.4346,0.4526,0.018,0.0091,0.0273,True,,
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0213,0.001,False,A x-first,-0.0103
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0274,-0.0074,True,A P-first,-0.0177
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0241,-0.0035,True,A Shapley,-0.014
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0145,0.0083,False,B x-first,-0.0028
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0058,0.0144,False,B P-first,0.0047
+decomposition 2010-2024,prefecture,47,raw,,,,-0.01,0.0111,False,B Shapley,0.001
+decomposition 2010-2024,prefecture,47,raw,,,,-0.0056,0.0347,False,B - A,0.015
+decomposition 2010-2024,prefecture,47,need,,,,-0.0144,0.0079,False,A x-first,-0.0032
+decomposition 2010-2024,prefecture,47,need,,,,-0.0222,-0.0003,True,A P-first,-0.0115
+decomposition 2010-2024,prefecture,47,need,,,,-0.0182,0.0035,False,A Shapley,-0.0074
+decomposition 2010-2024,prefecture,47,need,,,,-0.0174,0.0043,False,B x-first,-0.007
+decomposition 2010-2024,prefecture,47,need,,,,-0.0094,0.0119,False,B P-first,0.0012
+decomposition 2010-2024,prefecture,47,need,,,,-0.0131,0.0079,False,B Shapley,-0.0029
+decomposition 2010-2024,prefecture,47,need,,,,-0.0163,0.0253,False,B - A,0.0045
+decomposition 2010-2024,circle,330,raw,,,,0.0143,0.0295,True,A x-first,0.022
+decomposition 2010-2024,circle,330,raw,,,,0.0012,0.0168,True,A P-first,0.0091
+decomposition 2010-2024,circle,330,raw,,,,0.0079,0.023,True,A Shapley,0.0155
+decomposition 2010-2024,circle,330,raw,,,,-0.0416,-0.0206,True,B x-first,-0.0304
+decomposition 2010-2024,circle,330,raw,,,,-0.0286,-0.0074,True,B P-first,-0.0175
+decomposition 2010-2024,circle,330,raw,,,,-0.0351,-0.0141,True,B Shapley,-0.0239
+decomposition 2010-2024,circle,330,raw,,,,-0.0561,-0.0236,True,B - A,-0.0395
+decomposition 2010-2024,circle,330,need,,,,0.0219,0.0364,True,A x-first,0.0292
+decomposition 2010-2024,circle,330,need,,,,0.0115,0.0268,True,A P-first,0.0192
+decomposition 2010-2024,circle,330,need,,,,0.0168,0.0314,True,A Shapley,0.0242
+decomposition 2010-2024,circle,330,need,,,,-0.0441,-0.0283,True,B x-first,-0.036
+decomposition 2010-2024,circle,330,need,,,,-0.0345,-0.0179,True,B P-first,-0.026
+decomposition 2010-2024,circle,330,need,,,,-0.0392,-0.0233,True,B Shapley,-0.031
+decomposition 2010-2024,circle,330,need,,,,-0.069,-0.0413,True,B - A,-0.0551
+decomposition 2010-2024,municipality,1876,raw,,,,0.0414,0.0588,True,A x-first,0.0498
+decomposition 2010-2024,municipality,1876,raw,,,,0.0284,0.0475,True,A P-first,0.038
+decomposition 2010-2024,municipality,1876,raw,,,,0.0356,0.0528,True,A Shapley,0.0439
+decomposition 2010-2024,municipality,1876,raw,,,,-0.0412,-0.0294,True,B x-first,-0.035
+decomposition 2010-2024,municipality,1876,raw,,,,-0.031,-0.0147,True,B P-first,-0.0232
+decomposition 2010-2024,municipality,1876,raw,,,,-0.0357,-0.0228,True,B Shapley,-0.0291
+decomposition 2010-2024,municipality,1876,raw,,,,-0.0848,-0.0613,True,B - A,-0.073
+decomposition 2010-2024,municipality,1876,need,,,,0.0442,0.0617,True,A x-first,0.0526
+decomposition 2010-2024,municipality,1876,need,,,,0.0352,0.0543,True,A P-first,0.0446
+decomposition 2010-2024,municipality,1876,need,,,,0.0403,0.0577,True,A Shapley,0.0486
+decomposition 2010-2024,municipality,1876,need,,,,-0.039,-0.0304,True,B x-first,-0.0346
+decomposition 2010-2024,municipality,1876,need,,,,-0.0327,-0.0195,True,B P-first,-0.0266
+decomposition 2010-2024,municipality,1876,need,,,,-0.0355,-0.0256,True,B Shapley,-0.0306
+decomposition 2010-2024,municipality,1876,need,,,,-0.0901,-0.0685,True,B - A,-0.0792

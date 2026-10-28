@@ -1,0 +1,126 @@
+====================================================================================================
+WORK 1 -- distance decay without a functional form
+====================================================================================================
+centroid distance of ADJACENT pairs (n=7,200): min 5.5, p25 23.7, median 33.8, p75 46.3, max 369.1 km
+centroid distance of pairs WITH FLOW (n=26,533): min 5.5, p25 39.3, median 68.9, p75 135.0, max 2441.8 km
+all pairs: median 487.0, max 2871.9 km
+
+Adjacent pairs sit almost entirely below the first decile of the POSITIVE-FLOW distance distribution -- pairs with F > 0, counted once each and NOT weighted by flow -- so the nearest decile is subdivided to resolve them.
+
+13 distance bins:
+ bin         range (km)     pairs  positive      flow  adjacent  median km
+   0               0-24     2,480     2,282    65,482     1,800       18.0
+   1              24-25       420       363     8,565       240       24.4
+   2              25-34     3,070     2,391    30,493     1,560       29.9
+   3              34-35       390       267     2,694       170       34.4
+   4              35-44     3,950     2,654    22,193     1,350       39.6
+   5              44-46     1,010       528     3,162       280       45.3
+   6              46-55     4,160     2,122    11,898       730       50.8
+   7              55-69     7,300     2,657    12,509       540       61.4
+   8              69-87    10,900     2,656     7,569       370       78.0
+   9             87-112    16,090     2,651     6,038       100       99.3
+  10            112-169    36,740     2,653     4,715        40      140.6
+  11            169-320    93,290     2,654     4,197        10      242.2
+  12           320-2873   363,050     2,655     3,101        10      696.0
+
+====================================================================================================
+PPML WITH DISTANCE BIN DUMMIES
+====================================================================================================
+
+--- descriptive, bins + adjacency ---  n=542,850, k=22, 0 separated observations dropped
+    distance bins, relative to bin 0 (0-24 km):
+        bin  1 (median   24.4 km):   +0.147 [ -0.139, +0.433]   rate ratio  1.1583
+        bin  2 (median   29.9 km):   +0.127 [ +0.003, +0.251]   rate ratio  1.1358
+        bin  3 (median   34.4 km):   -0.042 [ -0.285, +0.201]   rate ratio  0.9587
+        bin  4 (median   39.6 km):   -0.065 [ -0.262, +0.132]   rate ratio  0.9374
+        bin  5 (median   45.3 km):   -0.327 [ -0.597, -0.057]   rate ratio  0.7212
+        bin  6 (median   50.8 km):   -0.464 [ -0.693, -0.235]   rate ratio  0.6289
+        bin  7 (median   61.4 km):   -0.691 [ -0.992, -0.391]   rate ratio  0.5009
+        bin  8 (median   78.0 km):   -1.261 [ -1.525, -0.997]   rate ratio  0.2833
+        bin  9 (median   99.3 km):   -1.757 [ -2.027, -1.487]   rate ratio  0.1726
+        bin 10 (median  140.6 km):   -2.685 [ -2.994, -2.376]   rate ratio  0.0682
+        bin 11 (median  242.2 km):   -3.787 [ -4.112, -3.463]   rate ratio  0.0227
+        bin 12 (median  696.0 km):   -5.286 [ -5.549, -5.022]   rate ratio  0.0051
+               same_pref:   +1.061 [ +0.820, +1.301]  p=0
+                 log_x_i:   +0.932 [ +0.844, +1.020]  p=0
+           log_density_j:   +0.156 [ -0.013, +0.324]  p=0.07
+       log_infra_total_j:   +0.405 [ +0.329, +0.481]  p=0
+                     adj:   +0.748 [ +0.591, +0.905]  p=0
+
+--- descriptive, bins only (no adjacency) ---  n=542,850, k=21, 0 separated observations dropped
+    distance bins, relative to bin 0 (0-24 km):
+        bin  1 (median   24.4 km):   +0.071 [ -0.196, +0.338]   rate ratio  1.0738
+        bin  2 (median   29.9 km):   -0.152 [ -0.296, -0.008]   rate ratio  0.8590
+        bin  3 (median   34.4 km):   -0.364 [ -0.611, -0.117]   rate ratio  0.6950
+        bin  4 (median   39.6 km):   -0.443 [ -0.640, -0.246]   rate ratio  0.6420
+        bin  5 (median   45.3 km):   -0.773 [ -1.063, -0.484]   rate ratio  0.4616
+        bin  6 (median   50.8 km):   -0.912 [ -1.119, -0.704]   rate ratio  0.4019
+        bin  7 (median   61.4 km):   -1.163 [ -1.416, -0.910]   rate ratio  0.3126
+        bin  8 (median   78.0 km):   -1.775 [ -1.995, -1.556]   rate ratio  0.1694
+        bin  9 (median   99.3 km):   -2.276 [ -2.516, -2.036]   rate ratio  0.1027
+        bin 10 (median  140.6 km):   -3.202 [ -3.493, -2.911]   rate ratio  0.0407
+        bin 11 (median  242.2 km):   -4.295 [ -4.616, -3.974]   rate ratio  0.0136
+        bin 12 (median  696.0 km):   -5.803 [ -6.070, -5.535]   rate ratio  0.0030
+               same_pref:   +1.245 [ +1.013, +1.477]  p=0
+                 log_x_i:   +0.898 [ +0.814, +0.981]  p=0
+           log_density_j:   +0.213 [ +0.054, +0.373]  p=0.00883
+       log_infra_total_j:   +0.335 [ +0.241, +0.429]  p=2.76e-12
+
+--- origin/destination FE, bins + adjacency ---  n=541,205, k=679, 1,645 separated observations dropped
+    distance bins, relative to bin 0 (0-24 km):
+        bin  1 (median   24.4 km):   -0.052 [ -0.216, +0.112]   rate ratio  0.9490
+        bin  2 (median   29.9 km):   -0.204 [ -0.336, -0.072]   rate ratio  0.8157
+        bin  3 (median   34.4 km):   -0.515 [ -0.731, -0.299]   rate ratio  0.5973
+        bin  4 (median   39.6 km):   -0.616 [ -0.785, -0.446]   rate ratio  0.5404
+        bin  5 (median   45.3 km):   -0.844 [ -1.071, -0.618]   rate ratio  0.4298
+        bin  6 (median   50.8 km):   -1.148 [ -1.323, -0.974]   rate ratio  0.3172
+        bin  7 (median   61.4 km):   -1.525 [ -1.729, -1.320]   rate ratio  0.2177
+        bin  8 (median   78.0 km):   -2.107 [ -2.324, -1.890]   rate ratio  0.1216
+        bin  9 (median   99.3 km):   -2.729 [ -2.981, -2.477]   rate ratio  0.0653
+        bin 10 (median  140.6 km):   -3.743 [ -4.001, -3.485]   rate ratio  0.0237
+        bin 11 (median  242.2 km):   -4.855 [ -5.144, -4.565]   rate ratio  0.0078
+        bin 12 (median  696.0 km):   -6.494 [ -6.838, -6.149]   rate ratio  0.0015
+               same_pref:   +1.022 [ +0.806, +1.237]  p=0
+                 log_x_i:   +0.763 [ +0.374, +1.153]  p=0.000123
+           log_density_j:   +0.051 [ -0.199, +0.300]  p=0.691
+       log_infra_total_j:   -0.313 [ -0.565, -0.061]  p=0.0148
+                     adj:   +0.424 [ +0.297, +0.551]  p=5.84e-11
+
+--- origin/destination FE, bins only ---  n=541,205, k=678, 1,645 separated observations dropped
+    distance bins, relative to bin 0 (0-24 km):
+        bin  1 (median   24.4 km):   -0.158 [ -0.362, +0.047]   rate ratio  0.8543
+        bin  2 (median   29.9 km):   -0.412 [ -0.576, -0.247]   rate ratio  0.6626
+        bin  3 (median   34.4 km):   -0.790 [ -0.998, -0.582]   rate ratio  0.4539
+        bin  4 (median   39.6 km):   -0.898 [ -1.082, -0.713]   rate ratio  0.4074
+        bin  5 (median   45.3 km):   -1.153 [ -1.412, -0.895]   rate ratio  0.3156
+        bin  6 (median   50.8 km):   -1.480 [ -1.680, -1.280]   rate ratio  0.2276
+        bin  7 (median   61.4 km):   -1.892 [ -2.101, -1.683]   rate ratio  0.1507
+        bin  8 (median   78.0 km):   -2.511 [ -2.745, -2.276]   rate ratio  0.0812
+        bin  9 (median   99.3 km):   -3.136 [ -3.411, -2.861]   rate ratio  0.0434
+        bin 10 (median  140.6 km):   -4.178 [ -4.474, -3.882]   rate ratio  0.0153
+        bin 11 (median  242.2 km):   -5.294 [ -5.634, -4.953]   rate ratio  0.0050
+        bin 12 (median  696.0 km):   -6.933 [ -7.339, -6.527]   rate ratio  0.0010
+               same_pref:   +1.101 [ +0.906, +1.297]  p=0
+                 log_x_i:   +0.766 [ +0.376, +1.156]  p=0.000119
+           log_density_j:   +0.051 [ -0.199, +0.301]  p=0.692
+       log_infra_total_j:   -0.317 [ -0.568, -0.066]  p=0.0134
+
+variance inflation, fit A design without fixed effects (n=542,850): substantive max 1.801 (adj); year indicators max 1.634; band factor GVIF 2.005, GVIF^(1/(2*12)) 1.029; band dummies (reference-dependent, not printed) max 67.659
+
+====================================================================================================
+VERDICTS
+====================================================================================================
+     descriptive: decay monotone across bins = True
+  origin/dest FE: decay monotone across bins = True
+
+adjacency, with distance bins in the model:
+         descriptive: +0.748 [+0.591, +0.905]  -> SIGNIFICANT
+      origin/dest FE: +0.424 [+0.297, +0.551]  -> SIGNIFICANT
+
+For comparison, adjacency under the single log(1+dist) term was +0.178 (ns) descriptive and -0.274 (significant) with fixed effects.
+     descriptive: flow falls 3-fold between the nearest bin (median 18 km) and the bin at the median flow distance (61 km)
+  origin/dest FE: flow falls 7-fold between the nearest bin (median 18 km) and the bin at the median flow distance (61 km)
+           descriptive, bins + adjacency: bin  7 (median   61.4 km) -- flow falls 2.00-fold [1.48, 2.70] against the reference band (median 18 km), contiguity held
+           descriptive, bins + adjacency: bin 11 (median  242.2 km) -- flow falls 44.14-fold [31.90, 61.07] against the reference band (median 18 km), contiguity held
+ origin/destination FE, bins + adjacency: bin  7 (median   61.4 km) -- flow falls 4.59-fold [3.74, 5.64] against the reference band (median 18 km), contiguity held
+ origin/destination FE, bins + adjacency: bin 11 (median  242.2 km) -- flow falls 128.33-fold [96.08, 171.39] against the reference band (median 18 km), contiguity held

@@ -1,0 +1,2 @@
+census_year,area_code,name,published_value,statsDataId,reason,source_url
+2020,07546,双葉町,-,0003445078,"令和2年国勢調査 人口等基本集計（確定）の市区町村別人口で「-」（全町避難）。census_raw の2020年ファイルでも値が空。2024年の圏地図にはこのコードが在るので、人口0の単位として表に残す",https://www.e-stat.go.jp/dbview?sid=0003445078

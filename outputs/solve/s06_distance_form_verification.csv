@@ -1,0 +1,22 @@
+﻿check,value,df,p,bin,median_km,rel_error,log_minus_bin_coef,dist_term,with_adj,without_adj,shift
+V1 Wald bins jointly zero,570.6,12.0,0.0,,,,,,,,
+V1 deviance log,262238.9265,,,,,,,,,,
+V1 deviance bins,207750.3576,,,,,,,,,,
+V1 deviance log+bins,207746.5671,,,,,,,,,,
+"V1 deviance reduction, bands over log",54488.5689,,,,,,,,,,
+"V1 deviance reduction, adding log back to bands",3.7905,,,,,,,,,,
+V2a rel error by bin,,,,0.0,17.951423004310747,-0.2502,-0.0,,,,
+V2a rel error by bin,,,,1.0,24.412527073505927,0.62,-0.5551,,,,
+V2a rel error by bin,,,,2.0,29.940907818284114,0.6401,-0.8092,,,,
+V2a rel error by bin,,,,3.0,34.39231618403645,0.6846,-0.8268,,,,
+V2a rel error by bin,,,,4.0,39.59033012922111,0.7683,-0.995,,,,
+V2a rel error by bin,,,,5.0,45.34581822166841,0.5649,-0.9172,,,,
+V2a rel error by bin,,,,6.0,50.78299964393496,0.5794,-0.9346,,,,
+V2a rel error by bin,,,,7.0,61.43757160509907,0.5748,-0.9673,,,,
+V2a rel error by bin,,,,8.0,77.97619197652497,0.1412,-0.7244,,,,
+V2a rel error by bin,,,,9.0,99.2846517873091,-0.0228,-0.561,,,,
+V2a rel error by bin,,,,10.0,140.5833963022363,-0.3921,-0.1125,,,,
+V2a rel error by bin,,,,11.0,242.24457194224675,-0.5703,0.2369,,,,
+V2a rel error by bin,,,,12.0,696.0198487064915,-0.6708,0.2709,,,,
+V2b dest density,,,,,,,,log(1+d),-0.0306,-0.0159,0.0146
+V2b dest density,,,,,,,,13 bins,0.1559,0.2135,0.0576

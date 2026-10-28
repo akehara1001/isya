@@ -1,0 +1,119 @@
+==============================================================================
+ITEM 2 -- need-weighted Gini with and without the normalising constant r-bar
+==============================================================================
+ year  Gini(need, /rbar)  Gini(need, no rbar)     abs diff       rbar
+ 2006     0.206945515116       0.206945515116     2.22e-16     5901.7
+ 2008     0.212711757996       0.212711757996     2.22e-16     6008.5
+ 2010     0.215094838976       0.215094838976     6.66e-16     6115.0
+ 2012     0.216820050488       0.216820050488     2.22e-16     6221.5
+ 2014     0.217342662635       0.217342662635     2.22e-16     6327.8
+ 2016     0.215841787675       0.215841787675     2.22e-16     6426.5
+ 2018     0.214402125138       0.214402125138     0.00e+00     6517.4
+ 2020     0.213329647551       0.213329647551     2.22e-16     6607.6
+ 2022     0.209580032480       0.209580032480     0.00e+00     6697.6
+ 2024     0.208299385766       0.208299385766     2.22e-16     6787.0
+max |difference| over all waves = 6.661e-16  (machine epsilon scale => Gini is invariant to r-bar, as it must be)
+
+==============================================================================
+ITEM 3 -- is max(0, x_i + theta*n_i) ever binding?
+==============================================================================
+OD matrices present on disk: [2016, 2018, 2020, 2022, 2024]
+  2016: sum_i n_i = +0  (must be 0 by construction); min_i n_i = -807, total off-diagonal flow = 24233
+  2018: sum_i n_i = +0  (must be 0 by construction); min_i n_i = -1516, total off-diagonal flow = 36500
+  2020: sum_i n_i = +0  (must be 0 by construction); min_i n_i = -1803, total off-diagonal flow = 38859
+  2022: sum_i n_i = +0  (must be 0 by construction); min_i n_i = -1706, total off-diagonal flow = 41836
+  2024: sum_i n_i = +0  (must be 0 by construction); min_i n_i = -1100, total off-diagonal flow = 41188
+
+ year  theta  #circles with x+theta*n<0   min(x+theta*n)   argmin
+ 2016    0.0                          0             30.0     0102
+ 2016    0.1                          0             30.0     0102
+ 2016    0.2                          0             30.0     0102
+ 2016    0.3                          0             30.0     0102
+ 2016    0.4                          0             30.0     0102
+ 2016    0.5                          0             30.0     0102
+ 2016    0.6                          0             30.0     0102
+ 2016    0.7                          0             30.0     0102
+ 2016    0.8                          0             30.0     0102
+ 2016    0.9                          0             30.0     0102
+ 2016    1.0                          0             30.0     0102
+ 2018    0.0                          0             28.0     0102
+ 2018    0.1                          0             28.6     0102
+ 2018    0.2                          0             29.2     0102
+ 2018    0.3                          0             29.8     0102
+ 2018    0.4                          0             30.4     0102
+ 2018    0.5                          0             31.0     0102
+ 2018    0.6                          0             31.6     0102
+ 2018    0.7                          0             32.2     0102
+ 2018    0.8                          0             32.8     0102
+ 2018    0.9                          0             33.4     0102
+ 2018    1.0                          0             34.0     0102
+ 2020    0.0                          0             28.0     0102
+ 2020    0.1                          0             28.4     0102
+ 2020    0.2                          0             28.8     0102
+ 2020    0.3                          0             29.2     0102
+ 2020    0.4                          0             29.6     0102
+ 2020    0.5                          0             30.0     0102
+ 2020    0.6                          0             30.4     0102
+ 2020    0.7                          0             30.8     0102
+ 2020    0.8                          0             31.2     0102
+ 2020    0.9                          0             31.6     0102
+ 2020    1.0                          0             32.0     0102
+ 2022    0.0                          0             28.0     0102
+ 2022    0.1                          0             28.5     0102
+ 2022    0.2                          0             29.0     0102
+ 2022    0.3                          0             29.5     0102
+ 2022    0.4                          0             30.0     0102
+ 2022    0.5                          0             30.5     0102
+ 2022    0.6                          0             31.0     0102
+ 2022    0.7                          0             31.5     0102
+ 2022    0.8                          0             32.0     0102
+ 2022    0.9                          0             32.5     0102
+ 2022    1.0                          0             33.0     0102
+ 2024    0.0                          0             24.0     0102
+ 2024    0.1                          0             24.3     0102
+ 2024    0.2                          0             24.6     0102
+ 2024    0.3                          0             24.9     0102
+ 2024    0.4                          0             25.2     0102
+ 2024    0.5                          0             25.5     0102
+ 2024    0.6                          0             25.8     0102
+ 2024    0.7                          0             26.1     0102
+ 2024    0.8                          0             26.4     0102
+ 2024    0.9                          0             26.7     0102
+ 2024    1.0                          0             27.0     0102
+
+TOTAL binding cases over 5 waves x 11 theta values = 0
+global min over the whole grid of min_i (x_i + theta n_i) = 24.0 (year 2024, theta 0.0, circle 0102)
+max |sum_i S_i - sum_i x_i| over the grid = 0
+
+==============================================================================
+ITEM 4 -- how many flow waves does the pooled gravity model use?
+==============================================================================
+ year  n_positive_offdiag  possible_pairs  zero_share_pct  total_flow
+ 2016                4458          108570           95.89     24233.0
+ 2018                5242          108570           95.17     36500.0
+ 2020                5332          108570           95.09     38859.0
+ 2022                5674          108570           94.77     41836.0
+ 2024                5827          108570           94.63     41188.0
+
+pooled positive directed flows over 5 waves = 26,533
+possible directed pairs = 330 x 329 x 5 = 542,850
+share of possible pairs that are ZERO = 95.11%
+manuscript n for the gravity model = 26,011  ->  DOES NOT MATCH
+
+==============================================================================
+ITEM 15 -- do the interpolated/extrapolated age shares stay on the simplex?
+==============================================================================
+ year  extrapolated  raw_min_share  raw_n_negative  raw_max_abs_sum_dev  used_min_share  used_n_negative  used_max_abs_sum_dev
+ 2010         False       0.005631               0         3.330669e-16        0.005631                0          6.661338e-16
+ 2012         False       0.006196               0         3.330669e-16        0.006196                0          4.440892e-16
+ 2014         False       0.006761               0         3.330669e-16        0.006761                0          4.440892e-16
+ 2016         False       0.007598               0         4.440892e-16        0.007598                0          5.551115e-16
+ 2018         False       0.008709               0         2.220446e-16        0.008709                0          4.440892e-16
+ 2020         False       0.009820               0         3.330669e-16        0.009820                0          6.661338e-16
+ 2022          True       0.010931               0         3.330669e-16        0.010931                0          4.440892e-16
+ 2024          True       0.012042               0         3.330669e-16        0.012042                0          6.661338e-16
+
+raw (pre-clip) negative share cells over all circles x years: 0
+raw (pre-clip) max |sum of shares - 1|: 4.441e-16
+as-used max |sum of shares - 1|: 6.661e-16; negative cells as used: 0
+NOTE: the implementation applies np.clip(v, 0, None) then divides by the row sum, so the shares used are on the simplex by construction; the question answered here is whether that clip/renormalise step ever had anything to do.

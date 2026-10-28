@@ -1,0 +1,6 @@
+﻿census_year,mean_circle_coverage_unweighted_pct,backfilled_circle_pop,national_population,coverage_pct,printed_in_A1_3,circles_below_100pct,min_circle_coverage,census_units,units_carried_by_code_change_tables,rows_from_declared_splits,age_statsdataid,unknown_age_imputed,age_table_sum,total_population,total_minus_age_sum,gap_attributed_to,unstated_age_persons,unstated_age_pct
+2005,100.0,127767994.0,127767994.0,100.0,95.6,0,1.0,2366,616,2,0000033787,False,127285653.0,127767994.0,482341.0,unstated age (the table reports 年齢不詳 separately and the fetch drops it),482341.0,0.37751316656032025
+2010,100.0,128057352.0,128057352.0,100.0,99.0,0,1.0,1901,24,0,0003038591,False,127080929.0,128057352.0,976423.0,unstated age (the table reports 年齢不詳 separately and the fetch drops it),976423.0,0.7624888261003554
+2015,100.0,127094745.0,127094745.0,100.0,99.6,0,1.0,1896,9,0,0004019348,True,127094745.0,127094745.0,0.0,nothing: the table imputes unknown age and the sums agree,,
+2020,100.0,126146099.0,126146099.0,100.0,99.5,0,1.0,1896,7,0,0004019309,True,126146099.0,126146099.0,0.0,nothing: the table imputes unknown age and the sums agree,,
+2025,100.0,122972528.0,122972528.0,100.0,100.0,0,1.0,1892,0,0,,,,,,,,

@@ -1,0 +1,3 @@
+census_year,old_code,old_name,new_code,new_name,persons,statsDataId,source_area_code,source_url,note
+2005,19341,上九一色村,19201,甲府市,347,0003038586,19341,https://www.e-stat.go.jp/dbview?sid=0003038586,"平成22年国勢調査 組替人口（平成17年）「(旧 341 上九一色村（北部）)」。大字梯・古関が2006-03-01に甲府市へ編入（LOD http://data.e-stat.go.jp/lod/sace/C1055）"
+2005,19341,上九一色村,19430,富士河口湖町,1174,0003038586,1934B,https://www.e-stat.go.jp/dbview?sid=0003038586,"平成22年国勢調査 組替人口（平成17年）「(旧 341 上九一色村（南部）)」。大字精進・本栖・富士ヶ嶺が2006-03-01に富士河口湖町へ編入（LOD http://data.e-stat.go.jp/lod/sace/C1055）"

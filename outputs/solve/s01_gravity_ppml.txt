@@ -1,0 +1,74 @@
+====================================================================================================
+SOLVE 1 -- zero-inclusive gravity estimation
+====================================================================================================
+full directed dyad set: 330 x 329 x 5 = 542,850 rows
+positive flows : 26,533  (4.89%)
+true zeros     : 516,317  (95.11%)
+total flow volume preserved: 182,616
+
+zeros by wave:
+   2016: 104,112 zeros of 108,570  (95.89%)
+   2018: 103,328 zeros of 108,570  (95.17%)
+   2020: 103,238 zeros of 108,570  (95.09%)
+   2022: 102,896 zeros of 108,570  (94.77%)
+   2024: 102,743 zeros of 108,570  (94.63%)
+
+--- (a) PPML descriptive, year FE ---  design 542,850 x 11, converged in 8 iterations
+    all covariates identified; comparable term-for-term with the published NB-GLM
+                  term      coef  SE (2-way)                   95% CI       z          p
+              log_dist   -1.3911      0.0470 [  -1.4833,  -1.2990]  -29.59   0.00e+00
+                   adj   +0.2177      0.1105 [  +0.0012,  +0.4343]    1.97   4.88e-02
+             same_pref   +1.1417      0.1570 [  +0.8340,  +1.4494]    7.27   3.54e-13
+               log_x_i   +0.8145      0.0336 [  +0.7488,  +0.8803]   24.27   0.00e+00
+         log_density_j   -0.0306      0.1154 [  -0.2567,  +0.1956]   -0.26   7.91e-01
+     log_infra_total_j   +0.2902      0.0657 [  +0.1614,  +0.4190]    4.42   1.00e-05
+
+--- (b) PPML structural, origin + destination + year FE ---  design 541,205 x 668, converged in 11 iterations
+    1,645 observations dropped: fixed-effect groups whose flows are all zero are separated and not identified (standard PPML pre-step)
+    unit FE absorb time-invariant multilateral resistance; log_x_i and log_density_j survive only via within-unit time variation
+                  term      coef  SE (2-way)                   95% CI       z          p
+              log_dist   -2.0354      0.0549 [  -2.1430,  -1.9279]  -37.11   0.00e+00
+                   adj   -0.2779      0.0742 [  -0.4233,  -0.1324]   -3.74   1.81e-04
+             same_pref   +1.1102      0.1177 [  +0.8796,  +1.3408]    9.44   0.00e+00
+               log_x_i   +0.7624      0.1992 [  +0.3720,  +1.1528]    3.83   1.29e-04
+         log_density_j   +0.0507      0.1273 [  -0.1988,  +0.3003]    0.40   6.90e-01
+     log_infra_total_j   -0.3120      0.1307 [  -0.5682,  -0.0557]   -2.39   1.70e-02
+
+--- (b2) PPML full structural, origin x year + destination x year FE ---  design 530,687 x 3265, converged in 11 iterations
+    12,163 observations dropped: fixed-effect groups whose flows are all zero are separated and not identified (standard PPML pre-step)
+    origin stock and destination density are fully absorbed and drop out by construction
+                  term      coef  SE (2-way)                   95% CI       z          p
+              log_dist   -2.0360      0.0550 [  -2.1438,  -1.9283]  -37.04   0.00e+00
+                   adj   -0.2778      0.0741 [  -0.4230,  -0.1326]   -3.75   1.77e-04
+             same_pref   +1.1101      0.1175 [  +0.8799,  +1.3403]    9.45   0.00e+00
+
+--- (c) NB-GLM on positive flows only (the published model) ---
+    n = 26,533 positive flows
+                  term      coef  SE (2-way)                   95% CI
+              log_dist   -0.6342      0.0391 [  -0.7108,  -0.5576]
+                   adj   +0.5263      0.0531 [  +0.4221,  +0.6305]
+             same_pref   +0.9901      0.0575 [  +0.8775,  +1.1027]
+               log_x_i   +0.5959      0.0238 [  +0.5492,  +0.6425]
+         log_density_j   +0.1449      0.0851 [  -0.0219,  +0.3117]
+     log_infra_total_j   +0.2264      0.0275 [  +0.1725,  +0.2802]
+
+====================================================================================================
+VERDICTS
+====================================================================================================
+spec               (a) PPML descriptive, year FE  (b) PPML structural, origin + destination + year FE  (b2) PPML full structural, origin x year + destination x year FE  (c) NB-GLM positive flows (published)
+term                                                                                                                                                                                                          
+adj                                       0.2177                                              -0.2779                                                           -0.2778                                 0.5263
+log_density_j                            -0.0306                                               0.0507                                                               NaN                                 0.1449
+log_dist                                 -1.3911                                              -2.0354                                                           -2.0360                                -0.6342
+log_infra_total_j                         0.2902                                              -0.3120                                                               NaN                                 0.2264
+log_x_i                                   0.8145                                               0.7624                                                               NaN                                 0.5959
+same_pref                                 1.1417                                               1.1102                                                            1.1101                                 0.9901
+
+              log_dist: (a)-  (b)-  (b2)-  (c)-
+                   adj: (a)+  (b)-  (b2)-  (c)+
+             same_pref: (a)+  (b)+  (b2)+  (c)+
+               log_x_i: (a)+  (b)+  (c)+
+         log_density_j: (a)0  (b)0  (c)0
+     log_infra_total_j: (a)+  (b)-  (c)+
+
+legend: + significantly positive, - significantly negative, 0 not distinguishable from zero (two-way clustered)

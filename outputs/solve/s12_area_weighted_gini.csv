@@ -1,0 +1,13 @@
+﻿denominator,weighting,quantity,point,ci_lo,ci_hi,excludes_0
+raw,unweighted,total change,-0.008405,-0.017366,0.0001,False
+raw,unweighted,A (Shapley),0.015532,0.007865,0.023013,True
+raw,unweighted,B (Shapley),-0.023937,-0.035051,-0.014127,True
+raw,population-weighted,total change,-0.022247,-0.032675,-0.011738,True
+raw,population-weighted,A (Shapley),-0.004284,-0.011653,0.003229,False
+raw,population-weighted,B (Shapley),-0.017963,-0.032145,-0.005552,True
+need,unweighted,total change,-0.006795,-0.013323,0.000194,False
+need,unweighted,A (Shapley),0.024172,0.016788,0.031398,True
+need,unweighted,B (Shapley),-0.030967,-0.039226,-0.023269,True
+need,population-weighted,total change,-0.015706,-0.022034,-0.008518,True
+need,population-weighted,A (Shapley),0.001157,-0.006195,0.008565,False
+need,population-weighted,B (Shapley),-0.016862,-0.026417,-0.008258,True
